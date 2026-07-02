@@ -1,0 +1,6 @@
+{
+  "name": "WordPress AI Suite",
+  "description": "A fully-featured open-source WordPress AI engine. Generates high-quality articles, images, product descriptions, interactive chatbots, AI forms, semantic search indices, and custom fine-tuning models.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

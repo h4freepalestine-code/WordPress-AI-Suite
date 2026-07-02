@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Fix for "Cannot set property fetch of #<Window> which has only a getter" error
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return originalFetch;
+            },
+            set: function(newValue) {
+              originalFetch = newValue;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          console.warn('Fallback defineProperty on window.fetch failed:', e);
+        }
+
+        // Global uncaught error handler to prevent the app from crashing on sandbox/getter fetch errors
+        window.addEventListener('error', function(event) {
+          if (event.message && (
+            event.message.indexOf('fetch') !== -1 || 
+            event.message.indexOf('getter') !== -1 ||
+            event.message.indexOf('only a getter') !== -1
+          )) {
+            console.warn('Prevented crash from fetch getter/setter error:', event.message);
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        }, true);
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

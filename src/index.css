@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* --- SOPHISTICATED DARK SYSTEM OVERRIDES --- */
+
+/* Root and Base */
+body {
+  background-color: #0b0d14 !important;
+  color: #cbd5e1 !important;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Containers */
+.min-h-screen, .bg-slate-100 {
+  background-color: #090b11 !important;
+}
+
+/* WP Admin Header bar overrides */
+header.bg-slate-900 {
+  background-color: #07090e !important;
+  border-bottom: 1px solid #161c28 !important;
+}
+
+/* Side navigation container overrides */
+aside.bg-slate-850 {
+  background-color: #06080d !important;
+  border-right: 1px solid #141a26 !important;
+}
+
+aside button:hover {
+  background-color: #121824 !important;
+  color: #f8fafc !important;
+}
+
+/* Override cards and containers with high-contrast, fine-bordered dark glass containers */
+.bg-white, [class*="bg-white"] {
+  background-color: #0f1322 !important;
+  border: 1px solid #1a2236 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.01) !important;
+}
+
+/* Border overrides */
+.border-slate-200, .border-slate-200\/80, .border-slate-300, .border-gray-200 {
+  border-color: #1a2236 !important;
+}
+
+/* Secondary Backgrounds */
+.bg-slate-50, .bg-gray-50, .bg-slate-100\/50 {
+  background-color: #131929 !important;
+}
+
+/* Text Element Colors */
+.text-slate-900, .text-slate-800, .text-gray-900, .text-gray-800, .text-black {
+  color: #f8fafc !important;
+}
+
+.text-slate-700, .text-slate-600, .text-gray-700, .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+.text-slate-500, .text-slate-400, .text-gray-500, .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Sophisticated Typography Pairings: Lora Serif for headers, Inter for details */
+h1, h2, .text-3xl, .text-2xl, .text-xl, h3.font-bold {
+  font-family: "Lora", Georgia, Cambria, serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  color: #f8fafc !important;
+}
+
+/* Exclude certain stats numbers from serif font */
+h3.text-2xl.font-bold.text-slate-900 {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Buttons and interactive elements */
+.hover\:bg-slate-50:hover, .hover\:bg-gray-50:hover, .hover\:bg-slate-100:hover, .hover\:bg-gray-100:hover {
+  background-color: #171f38 !important;
+}
+
+/* Form Fields & Controls */
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select {
+  background-color: #131929 !important;
+  color: #f8fafc !important;
+  border: 1px solid #1c243c !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem 0.75rem !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #475569 !important;
+}
+
+/* Labels */
+label, .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090b11;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a2236;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #25314d;
+}
+
+/* Specific elements adjustments */
+.bg-slate-950, .bg-slate-900 {
+  background-color: #07090f !important;
+}
+
+/* Badge colors */
+.bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #60a5fa !important;
+}
+.bg-purple-50 {
+  background-color: rgba(168, 85, 247, 0.1) !important;
+  color: #c084fc !important;
+}
+.bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+  color: #34d399 !important;
+}
+.bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+  color: #fbbf24 !important;
+}
+.bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #fbbf24 !important;
+}
+
+/* Alert Boxes and feedback */
+.border-amber-200 {
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+.text-amber-900, .text-amber-800 {
+  color: #fef08a !important;
+}
+.text-amber-700 {
+  color: #fde047 !important;
+}
+
+/* Code logs lists */
+pre, code, .font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace !important;
+  background-color: #07090f !important;
+  color: #94a3b8 !important;
+}
